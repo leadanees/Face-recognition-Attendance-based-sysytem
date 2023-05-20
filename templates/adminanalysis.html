@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}analytics{% endblock %}
+
+{% block content %}
+<style>
+  .form-center {
+  display:flex;
+  justify-content: center;
+  }
+</style>
+
+<h3 class="form-center">Search analytics by entering prn</h3>
+<div class="form-center"> 
+  <form method="POST">
+    <!-- naming the forms -->
+    <input type="hidden" name="form" value="form1">
+    <input type="number" name="text" placeholder="prn">
+    <input type="submit" value="Search">
+</form>
+</div>
+
+ <h3 class="form-center">Search analytics by date for individual</h3>
+<div class="form-center">
+<form method="POST">
+    <input type="hidden" name="form" value="form2">
+    <input type="number" name="text" placeholder="prn">
+    <input type="date" name="date1" placegolder="startdate">
+    <input type="date" name="date2" placeholder="lastdate">
+    <input type="submit" value="Search">
+</form>
+</div>
+
+<h3 class="form-center">Search analytics by date for all</h3>
+<div class="form-center">
+<form method="POST">
+    <input type="hidden" name="form" value="form3">
+    <input type="date" name="date1" placegolder="startdate">
+    <input type="date" name="date2" placeholder="lastdate">
+    <input type="submit" value="Search">
+</form>
+</div>
+
+{% endblock %}

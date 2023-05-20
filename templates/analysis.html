@@ -1,0 +1,132 @@
+{% extends 'layout.html' %}
+
+{% block title %}analytics{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Python Flask Show Data on Google Pie Chart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                {% for key, value in data.items() %}
+                    {% if value is string %}
+                        ['{{ key }}', '{{ value }}'],
+                    {% else %}
+                        ['{{ key }}', {{ value }}],
+                    {% endif %}
+                {% endfor %}
+            ]);
+            var data1 = google.visualization.arrayToDataTable([
+                {% for key, value in data1.items() %}
+                    {% if value is string %}
+                        ['{{ key }}', '{{ value }}'],
+                    {% else %}
+                        ['{{ key }}', {{ value }}],
+                    {% endif %}
+                {% endfor %}
+            ]);
+            var data2 = google.visualization.arrayToDataTable([
+                {% for key, value in data2.items() %}
+                    {% if value is string %}
+                        ['{{ key }}', '{{ value }}'],
+                    {% else %}
+                        ['{{ key }}', {{ value }}],
+                    {% endif %}
+                {% endfor %}
+            ]);
+            var data3 = google.visualization.arrayToDataTable([
+                {% for key, value in data3.items() %}
+                    {% if value is string %}
+                        ['{{ key }}', '{{ value }}'],
+                    {% else %}
+                        ['{{ key }}', {{ value }}],
+                    {% endif %}
+                {% endfor %}
+            ]);
+            var data4 = google.visualization.arrayToDataTable([
+                {% for key, value in data4.items() %}
+                    {% if value is string %}
+                        ['{{ key }}', '{{ value }}'],
+                    {% else %}
+                        ['{{ key }}', {{ value }}],
+                    {% endif %}
+                {% endfor %}
+            ]);
+            var data5 = google.visualization.arrayToDataTable([
+                {% for key, value in data5.items() %}
+                    {% if value is string %}
+                        ['{{ key }}', '{{ value }}'],
+                    {% else %}
+                        ['{{ key }}', {{ value }}],
+                    {% endif %}
+                {% endfor %}
+            ]);
+            var options = {
+            title: '',
+            pieHole: 0.5,
+            pieStartAngle: 100
+            };
+    
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_31'));
+            var chart1 = new google.visualization.PieChart(document.getElementById('piechart_32'));
+            var chart2 = new google.visualization.PieChart(document.getElementById('piechart_33'));
+            var chart3 = new google.visualization.PieChart(document.getElementById('piechart_34'));
+            var chart4= new google.visualization.PieChart(document.getElementById('piechart_35'));
+            var chart5= new google.visualization.PieChart(document.getElementById('piechart_36'));
+            chart.draw(data, options);
+            chart1.draw(data1, options);
+            chart2.draw(data2, options);
+            chart3.draw(data3, options);
+            chart4.draw(data4, options);
+            chart5.draw(data5, options);
+        }
+    </script>
+</head>
+<style>
+.form-center {
+  display:flex;
+  justify-content: center;
+}
+</style>
+<body>
+    
+    <h3 align="center">cloud computing</h3>
+    <div class="form-center">
+    <div id="piechart_31" style="width: 400px; height: 300px;"></div>
+    </div>
+
+    <h3 align="center">big data</h3>
+    <div class="form-center">
+    <div id="piechart_32" style="width: 400px; height: 300px;"></div>
+    </div>
+
+    <h3 align="center">block chain</h3>
+    <div class="form-center">
+    <div id="piechart_33" style="width: 400px; height: 300px;"></div>
+    </div>
+
+    <h3 align="center">project management</h3>
+    <div class="form-center">
+    <div id="piechart_34" style="width: 400px; height: 300px;"></div>
+    </div>
+
+    <h3 align="center">environmental management</h3>
+    <div class="form-center">
+    <div id="piechart_35" style="width: 400px; height: 300px;"></div>
+    </div>
+
+    <h3 align="center">Total Attendance</h3>
+    <div class="form-center">
+    <div id="piechart_36" style="width: 400px; height: 300px;"></div>
+    </div>
+
+</body>
+</html>
+{% endblock %}

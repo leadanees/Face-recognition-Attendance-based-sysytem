@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<style>
+	section{
+        background-size: cover;
+        height: calc(100vh - 80px);
+      }
+	</style>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>Attendance</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="{{ url_for('adminanalysis') }}"><i class="fa fa-search" aria-hidden="true"></i> search</a>
+				<a href="{{ url_for('analysis') }}"><i class="fas fa-user-circle"></i>analytics</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		<div class="content">
+		<div>
+		
+			{% block content %}{% endblock %}
+		
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+APScheduler==3.10.0
+Flask==2.2.3
+Flask_MySQLdb==1.0.1
+joblib==1.2.0
+matplotlib==3.7.0
+MySQL-python==1.2.5
+mysql_connector_repackaged==0.3.1
+numpy==1.24.2
+opencv_python==4.7.0.68
+pandas==1.5.3
+scikit_learn==1.2.2
